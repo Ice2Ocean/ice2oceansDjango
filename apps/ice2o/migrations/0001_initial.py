@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
             name='AuthGroupPermissions',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthGroup')),
+                ('group', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthGroup')),
             ],
             options={
                 'db_table': 'auth_group_permissions',
@@ -86,8 +86,8 @@ class Migration(migrations.Migration):
             name='AuthUserGroups',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthGroup')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthUser')),
+                ('group', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthGroup')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthUser')),
             ],
             options={
                 'db_table': 'auth_user_groups',
@@ -98,8 +98,8 @@ class Migration(migrations.Migration):
             name='AuthUserUserPermissions',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('permission', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthPermission')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthUser')),
+                ('permission', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthPermission')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthUser')),
             ],
             options={
                 'db_table': 'auth_user_user_permissions',
@@ -1061,22 +1061,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='djangoadminlog',
             name='content_type',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='api.DjangoContentType'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.DjangoContentType'),
         ),
         migrations.AddField(
             model_name='djangoadminlog',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthUser'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthUser'),
         ),
         migrations.AddField(
             model_name='authpermission',
             name='content_type',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.DjangoContentType'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.DjangoContentType'),
         ),
         migrations.AddField(
             model_name='authgrouppermissions',
             name='permission',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='api.AuthPermission'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='apps.ice2o.AuthPermission'),
         ),
         migrations.AlterUniqueTogether(
             name='authuseruserpermissions',

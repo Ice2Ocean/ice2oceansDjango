@@ -9,7 +9,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0003_auto_20170413_2107'),
+        ('ice2o', '0003_auto_20170413_2107'),
     ]
 
     operations = [

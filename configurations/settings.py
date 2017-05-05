@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api'
+    'apps.ice2o',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -79,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'ice2ocean',
-        'USER': 'username',
-        'PASSWORD': 'password',
+        'USER': 'django_admin',
+        'PASSWORD': '>*{29N6fbNxCK#G',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5436',
         'OPTIONS': {
             'options': '-c search_path=django_admin,data,public'
         }
@@ -127,3 +128,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# For Django Rest Framework
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

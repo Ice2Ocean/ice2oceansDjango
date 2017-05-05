@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0005_delete_arendtregions'),
+        ('ice2o', '0005_delete_arendtregions'),
     ]
 
     operations = [
